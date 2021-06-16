@@ -42,6 +42,12 @@ vector<vector<State>> ReadBoardFile(string path) {
   return board;
 }
 
+// TODO: Write the Heuristic function here.
+int Heuristic(int x1, int y1, int x2, int y2)
+{
+  return abs(x2 -x1) + abs(y2 - y1);
+}
+
 // TODO: Write the Search function stub here.
 std::vector<vector<State>> Search(std::vector<vector<State>> BoardGrid, vector<int> Init, vector<int> Goal)
 {
