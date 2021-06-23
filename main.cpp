@@ -10,7 +10,7 @@ using std::string;
 using std::vector;
 using std::abs;
 
-enum class State {kEmpty, kObstacle};
+enum class State {kEmpty, kObstacle, kClosed};
 
 
 vector<State> ParseLine(string line) {
@@ -48,6 +48,14 @@ int Heuristic(int x1, int y1, int x2, int y2)
   return abs(x2 -x1) + abs(y2 - y1);
 }
 
+void AddToOpen(int x, int y, int g, int h, std::vector<vector<int>>& openNodes, std::vector<vector<State>>& grid)
+{
+  vector<int> node = {x, y, g, h};
+  openNodes.push_back(node);
+  grid[x][y] = State::kClosed;
+}
+
+
 // TODO: Write the Search function stub here.
 std::vector<vector<State>> Search(std::vector<vector<State>> BoardGrid, vector<int> Init, vector<int> Goal)
 {
@@ -75,11 +83,15 @@ void PrintBoard(const vector<vector<State>> board) {
 }
 
 
+#include "test.cpp"
+
 int main() {
-  // TODO: Declare "init" and "goal" arrays with values {0, 0} and {4, 5} respectively.
+  int init[2]{0, 0};
+  int goal[2]{4, 5};
   auto board = ReadBoardFile("1.board");
-  // TODO: Call Search with "board", "init", and "goal". Store the results in the variable "solution".
-  std::vector<vector<State>> solution = Search(board,{0,0},{4,5});
-  // TODO: Change the following line to pass "solution" to PrintBoard.
+  auto solution = Search(board, init, goal);
   PrintBoard(solution);
+  // Tests
+  TestHeuristic();
+  TestAddToOpen();
 }
