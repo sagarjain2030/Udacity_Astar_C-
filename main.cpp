@@ -56,14 +56,23 @@ void AddToOpen(int x, int y, int g, int h, std::vector<vector<int>>& openNodes, 
 }
 
 
-// TODO: Write the Search function stub here.
-std::vector<vector<State>> Search(std::vector<vector<State>> BoardGrid, vector<int> Init, vector<int> Goal)
-{
-  std::vector<vector<State>> returnStatemap;
-  cout<<"No path found!" << std::endl;
-  return returnStatemap;
-}
+/** 
+ * Implementation of A* search algorithm
+ */
+vector<vector<State>> Search(vector<vector<State>> grid, int init[2], int goal[2]) {
+  // Create the vector of open nodes.
+  vector<vector<int>> open {};
+  
+  // TODO: Initialize the starting node. 
+  vector<int> firstNode = 
+  {init[0], init[1], 0, Heuristic(init[0],init[1], goal[0], goal[1])};
+  
+  // TODO: Use AddToOpen to add the starting node to the open vector.
+  AddToOpen(init[0],init[1], 0, Heuristic(init[0],init[1], goal[0], goal[1]), open, grid);
 
+  cout << "No path found!" << "\n";
+  return std::vector<vector<State>>{};
+}
 
 string CellString(State cell) {
   switch(cell) {
