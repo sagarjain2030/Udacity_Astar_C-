@@ -27,6 +27,11 @@ Search( grid, initial_point, goal_point ) :
 	
 	If you exit the while loop because the list of open nodes is empty, you have run out of new nodes to explore and haven't found a path.
 
+#### Commit 6:
+Addition of compare function to compare nodes. The function combines goal and heuristic values to compare nodes in open list. This comparison is used to decide which node should be expanded next.
+
+#### Commit 5:
+Addition of first node (start state) to AddToOpen list for beginning the operation of A\* search.
 
 #### Commit 4:
 Addition of function AddToOpen. This function will add new nodes to open list for traversing. A node has x, y co ordinates, a goal value g and heuristic function value h. 

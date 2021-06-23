@@ -42,6 +42,12 @@ vector<vector<State>> ReadBoardFile(string path) {
   return board;
 }
 
+// TODO: Write function to compare the f-value of two nodes here
+bool Compare(vector<int> node1, vector<int> node2)
+{
+  return node1[2] + node1[3] > node2[2] + node2[3]? true : false;
+}
+
 // TODO: Write the Heuristic function here.
 int Heuristic(int x1, int y1, int x2, int y2)
 {
