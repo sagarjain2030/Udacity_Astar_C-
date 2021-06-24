@@ -27,6 +27,9 @@ Search( grid, initial_point, goal_point ) :
 	
 	If you exit the while loop because the list of open nodes is empty, you have run out of new nodes to explore and haven't found a path.
 
+#### Commit 7:
+Addition of while loop from psudo code. Finding neighbouring nodes is still remaining.
+
 #### Commit 6:
 Addition of compare function to compare nodes. The function combines goal and heuristic values to compare nodes in open list. This comparison is used to decide which node should be expanded next.
 
