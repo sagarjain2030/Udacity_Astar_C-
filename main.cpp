@@ -64,6 +64,22 @@ int Heuristic(int x1, int y1, int x2, int y2)
   return abs(x2 -x1) + abs(y2 - y1);
 }
 
+// TODO: Write CheckValidCell here. Check that the 
+// cell is on the grid and not an obstacle (i.e. equals kEmpty).
+bool CheckValidCell(int x, int y, vector<vector<State>> &grid)
+{
+  bool bool_x = (x > 0 && grid.size() > x? true:false);
+  bool bool_y = (y > 0 && grid[x].size() > y? true:false);
+  if(bool_x && bool_y)
+  {
+    if(grid[x][y] == State::kEmpty)
+      return true;
+    return false;
+  }
+  
+  return false;
+}
+
 void AddToOpen(int x, int y, int g, int h, std::vector<vector<int>>& openNodes, std::vector<vector<State>>& grid)
 {
   vector<int> node = {x, y, g, h};
@@ -147,4 +163,5 @@ int main() {
   TestAddToOpen();
   TestCompare();
   TestSearch();
+  TestCheckValidCell();
 }

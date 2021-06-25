@@ -27,6 +27,12 @@ Search( grid, initial_point, goal_point ) :
 	
 	If you exit the while loop because the list of open nodes is empty, you have run out of new nodes to explore and haven't found a path.
 
+
+
+#### Commit 8:
+Addition of CheckValidCell function. This function checks if the node is valid in the grid coordinates and if it's not an obstacle and not a closed node. This will decide we want to add node to open list or not.
+
+
 #### Commit 7:
 Addition of while loop from psudo code. Finding neighbouring nodes is still remaining.
 
