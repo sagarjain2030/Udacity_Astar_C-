@@ -2,9 +2,10 @@
 
 
 My study and coding of A star algorithm in C++ with the help of Udacity C++ nanodegree
-Pseudo code for A\*  Search is 
-"""
-Search( grid, initial_point, goal_point ) :
+Pseudo code for A\*  Search is   
+ 
+	Search( grid, initial_point, goal_point ) :
+	
 	Initialize an empty list of open nodes.
 	
 	Initialize a starting node with the following:
@@ -26,6 +27,18 @@ Search( grid, initial_point, goal_point ) :
 			Mark the cell as closed.
 	
 	If you exit the while loop because the list of open nodes is empty, you have run out of new nodes to explore and haven't found a path.
+
+
+
+#### Commit 9:
+Addition of Expand neightbours.This function implements psudocode given below  
+
+	// TODO: ExpandNeighbors {
+	// TODO: Get current node's data.
+	// TODO: Loop through current node's potential neighbors.
+	// TODO: Check that the potential neighbor's x2 and y2 values are on the grid and not closed.
+    // TODO: Increment g value, compute h value, and add neighbor to open list.
+	// } TODO: End function  
 
 
 

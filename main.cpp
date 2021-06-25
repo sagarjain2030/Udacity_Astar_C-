@@ -89,6 +89,37 @@ void AddToOpen(int x, int y, int g, int h, std::vector<vector<int>>& openNodes, 
 
 
 /** 
+ * Expand current nodes's neighbors and add them to the open list.
+ */
+// TODO: ExpandNeighbors(arguments) {
+
+  // TODO: Get current node's data.
+
+  // TODO: Loop through current node's potential neighbors.
+
+    // TODO: Check that the potential neighbor's x2 and y2 values are on the grid and not closed.
+
+      // TODO: Increment g value, compute h value, and add neighbor to open list.
+
+// } TODO: End the function
+
+void ExpandNeighbors(const vector<int>& current, int goal[2], vector<vector<int>>& open, vector<vector<State>>& grid)
+{
+  for(int i = 0; i < 4; i++)
+  {
+    int neighbour_x = current[0] + delta[i][0];
+    int neighbour_y = current[1] + delta[i][1];
+    if(CheckValidCell(neighbour_x, neighbour_y, grid))
+    {
+      int g2 = current[2] + 1;
+      int h2 = Heuristic(neighbour_x, neighbour_y, goal[0], goal[1]);
+      AddToOpen(neighbour_x, neighbour_y, g2, h2, open, grid);
+    }
+  }
+}
+
+
+/** 
  * Implementation of A* search algorithm
  */
 vector<vector<State>> Search(vector<vector<State>> grid, int init[2], int goal[2]) {
@@ -120,8 +151,9 @@ vector<vector<State>> Search(vector<vector<State>> grid, int init[2], int goal[2
     // TODO: Check if you've reached the goal. If so, return grid.
 
     
-    // If we're not done, expand search to current node's neighbors. This step will be completed in a later quiz.
-    // ExpandNeighbors
+    // If we're not done, expand search to current node's neighbors. 
+	// This step will be completed in a later quiz.
+     ExpandNeighbors(current, goal, open, grid);
   
   } // TODO: End while loop
   
@@ -164,4 +196,5 @@ int main() {
   TestCompare();
   TestSearch();
   TestCheckValidCell();
+  TestExpandNeighbors();
 }
