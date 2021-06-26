@@ -28,10 +28,11 @@ Pseudo code for A\*  Search is
 	
 	If you exit the while loop because the list of open nodes is empty, you have run out of new nodes to explore and haven't found a path.
 
-
+#### Commit 10:
+Final Cleanup. Addition of start and goal state(node). End of project
 
 #### Commit 9:
-Addition of Expand neightbours.This function implements psudocode given below  
+Addition of Expand neightbours.This function implements psudocode given below:-  
 
 	// TODO: ExpandNeighbors {
 	// TODO: Get current node's data.

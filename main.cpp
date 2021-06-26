@@ -13,7 +13,8 @@ using std::string;
 using std::vector;
 using std::abs;
 
-enum class State {kEmpty, kObstacle, kClosed, kPath};
+enum class State {kStart, kFinish, kEmpty, kObstacle, kClosed, kPath};
+const int delta[4][2]{{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
 
 
 vector<State> ParseLine(string line) {
@@ -167,6 +168,9 @@ string CellString(State cell) {
   switch(cell) {
     case State::kObstacle: return "⛰️   ";
     case State::kPath: return "🚗   ";
+	     case State::kStart: return "🚦   ";
+    case State::kFinish: return "🏁   ";
+ 
     default: return "0   "; 
   }
 }
